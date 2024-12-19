@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        textarea, input[type="file"] {
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        #result, #instructions, #output {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        #output {
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sentiment Analysis Tool</h1>
+
+    <!-- Instructions -->
+    <p id="instructions">Step 1: Upload a file or manually input your messages.</p>
+
+    <!-- File Upload Option -->
+    <div id="file-upload">
+        <h2>Upload a .txt File with Messages</h2>
+        <input type="file" id="fileInput" accept=".txt">
+        <button onclick="processFile()">Upload and Clean Data</button>
+        <p id="fileResult"></p>
+    </div>
+
+    <!-- Manual Input Option -->
+    <div id="manual-input" style="margin-top: 30px;">
+        <h2>Input Your Messages</h2>
+        <textarea id="messageInput" placeholder="Enter one message per line"></textarea>
+        <br>
+        <button onclick="processManualInput()">Clean and Analyze Messages</button>
+    </div>
+
+    <!-- Results -->
+    <div id="results">
+        <h2>Output</h2>
+        <pre id="output"></pre>
+    </div>
+
+    <!-- Include Sentiment.js -->
+    <script src="https://cdn.jsdelivr.net/npm/sentiment@5.0.2"></script>
+    <script src="script.js"></script>
+</body>
+</html>
